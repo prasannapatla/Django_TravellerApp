@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+
+<form action="register" method="post">
+{% csrf_token %}
+  <div class="container">
+    <h1>Register</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+
+    <label for="first"><b>Firstname</b></label>
+    <input type="text" placeholder="Enter firstname" name="first_name" id="firstname" required><br><br>
+    <label for="last"><b>Lastname</b></label>
+    <input type="text" placeholder="Enter lasttname" name="last_name" id="Lastname" required><br><br>
+    <label for="user"><b>Username</b></label>
+    <input type="text" placeholder="Enter username" name="user_name" id="usertname" required><br><br>
+    <label for="email"><b>Email</b></label>
+    <input type="email" placeholder="Enter email" name="email" id="email" required><br><br>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="pass1" id="psw" required><br><br>
+
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="pass2" id="psw-repeat" required><br><br>
+    <hr>
+    
+
+    <button type="submit" class="registerbtn">Register</button><br><br>
+  </div>
+  
+  
+</form>
+<div style="color:red">
+  {%for message in messages%}
+    <p class="capitalize" style="font-size:30px;font-weight:600">{{message}}</p>
+    {%endfor%}
+  </div>
+</body>
+</html>
